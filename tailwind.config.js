@@ -13,6 +13,7 @@ export default {
         'terminal-dark': '#0a0a0f',
         'terminal-purple': '#8b5cf6',
         'terminal-cyan': '#06b6d4',
+        'subtle-grey': '#f5f5f5',
       },
       spacing: {
         'retro': '0.125rem',
