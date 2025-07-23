@@ -3,11 +3,13 @@ import { Button } from "@/components/ui/button"
 import { HomeButton } from "@/components/ui/button"
 import { Card } from './components/ui/card'
 
+const version = "1.0"
+
 // Components
 const Home = () => (
   <div className="min-h-screen bg-apple-beige font-apple-system">
     <div className="bg-apple-dark text-apple-cream px-4 py-1 text-sm font-bold">
-      <span className="mr-8">🍎 Version 1.0</span>
+      <span className="mr-8">🍎 Version {version}</span>
     </div>
     
     <div className="container mx-auto px-8 py-12">
@@ -47,8 +49,9 @@ const Home = () => (
     </div>
     
           <div className="fixed bottom-0 left-0 right-0 bg-black text-white px-4 py-1 text-xs">
-      <div className="flex justify-between">
+      <div className="flex justify-between flex-col">
         <span>{new Date().toLocaleTimeString()}</span>
+        <span>{new Date().toLocaleDateString()}</span>
       </div>
     </div>
   </div>
@@ -57,7 +60,7 @@ const Home = () => (
 const About = () => (
   <div className="min-h-screen bg-apple-beige font-apple-system">
     <div className="bg-apple-dark text-apple-cream px-4 py-1 text-sm font-bold">
-      <span className="mr-8">🍎 Version 1.0</span>
+      <span className="mr-8">🍎 Version {version}</span>
     </div>
     
     <div className="container mx-auto px-8 py-12">
@@ -115,17 +118,17 @@ const About = () => (
 const Projects = () => (
   <div className="min-h-screen bg-apple-beige font-apple-system">
     <div className="bg-apple-dark text-apple-cream px-4 py-1 text-sm font-bold">
-      <span className="mr-8">🍎 Version 1.0</span>
+      <span className="mr-8">🍎 Version {version}</span>
     </div>
     
     <div className="container mx-auto px-8 py-12">
       <div className="mac-window p-8 mx-auto max-w-6xl">
         <div className="bg-apple-dark text-apple-cream px-4 py-2 -m-8 mb-8 flex justify-between items-center">
-          <span className="font-bold text-sm">Projects Folder - Finder</span>
+          <span className="font-bold text-sm">Projects Explorer</span>
           <HomeButton />
         </div>
         
-        <h1 className="retro-title text-3xl mb-8 text-apple-dark text-center">PROJECT_DIRECTORY</h1>
+        <h1 className="retro-title text-3xl mb-8 text-apple-dark text-center">PROJECT_EXPLORER</h1>
         
         <div className="grid md:grid-cols-2 gap-6">
           {/* Project 1 */}
