@@ -5,26 +5,17 @@ import { HomeButton } from "@/components/ui/button"
 import { Card } from './components/ui/card'
 import { TimeBar } from './components/time/TimeBar'
 
-const version = "1.0"
+const version = "1.1"
 
-// Components
 const Home = () => (
   <div className="min-h-screen bg-apple-beige font-apple-system">
     <div className="flex flex-col text-apple-cream px-4 py-1 text-sm font-bold">
       <span className="mr-8">🍎 Version {version}</span>
-      <span className="font-bold text-sm">Welcome - Sungjoon's Portfolio</span>
+      <span className="font-bold text-sm">Welcome - Sungjoon's Website</span>
     </div>
     
     <div className="container mx-auto px-8 py-12">
       <div className="mac-window p-8 mx-auto max-w-4xl">
-        <div className="bg-apple-dark text-apple-cream px-4 py-2 -m-8 mb-8 flex justify-between items-center">
-          <div className="flex space-x-1">
-            <div className="w-4 h-4 bg-apple-cream border border-apple-dark"></div>
-          </div>
-        </div>
-        
-        <div className="terminal p-4 mb-8 font-apple text-sm">
-        </div>
         
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl mb-6">
@@ -39,10 +30,10 @@ const Home = () => (
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button asChild variant="outline">
+            <Button size='largeCircle'>
               <Link to="/about">ABOUT</Link>
             </Button>
-            <Button asChild variant="outline">
+            <Button size='largeCircle'>
               <Link to="/projects">PROJECTS</Link>
             </Button>
           </div>
