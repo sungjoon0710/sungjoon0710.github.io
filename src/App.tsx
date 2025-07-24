@@ -2,20 +2,21 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Button } from "@/components/ui/button"
 import { HomeButton } from "@/components/ui/button"
 import { Card } from './components/ui/card'
+import { TimeBar } from './components/time/TimeBar'
 
 const version = "1.0"
 
 // Components
 const Home = () => (
   <div className="min-h-screen bg-apple-beige font-apple-system">
-    <div className="bg-apple-dark text-apple-cream px-4 py-1 text-sm font-bold">
+    <div className="flex flex-col text-apple-cream px-4 py-1 text-sm font-bold">
       <span className="mr-8">🍎 Version {version}</span>
+      <span className="font-bold text-sm">Welcome - Sungjoon's Portfolio</span>
     </div>
     
     <div className="container mx-auto px-8 py-12">
       <div className="mac-window p-8 mx-auto max-w-4xl">
         <div className="bg-apple-dark text-apple-cream px-4 py-2 -m-8 mb-8 flex justify-between items-center">
-          <span className="font-bold text-sm">Welcome - Sungjoon's Portfolio</span>
           <div className="flex space-x-1">
             <div className="w-4 h-4 bg-apple-cream border border-apple-dark"></div>
           </div>
@@ -48,10 +49,11 @@ const Home = () => (
       </div>
     </div>
     
-          <div className="fixed bottom-0 left-0 right-0 bg-black text-white px-4 py-1 text-xs">
+          <div className="fixed bottom-0 left-0 right-0 bg-white text-black px-4 py-1 text-xs">
       <div className="flex justify-between flex-col">
         <span>{new Date().toLocaleTimeString()}</span>
         <span>{new Date().toLocaleDateString()}</span>
+        <TimeBar currentTime={new Date().toISOString()} />
       </div>
     </div>
   </div>
