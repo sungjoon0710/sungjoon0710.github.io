@@ -2,55 +2,47 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { isMobile } from "react-device-detect";
 import { Button } from "@/components/ui/button"
 import { HomeButton } from "@/components/ui/button"
-import { Card } from './components/ui/card'
+import { Card, CardTitle, CardContent } from './components/ui/card'
 import { TimeBar } from './components/time/TimeBar'
 
-const version = "1.0"
+const version = "1.1"
 
-// Components
 const Home = () => (
   <div className="min-h-screen bg-apple-beige font-apple-system">
     <div className="flex flex-col text-apple-cream px-4 py-1 text-sm font-bold">
       <span className="mr-8">🍎 Version {version}</span>
-      <span className="font-bold text-sm">Welcome - Sungjoon's Portfolio</span>
+      <span className="font-bold text-sm">Welcome - Sungjoon's Website</span>
     </div>
     
-    <div className="container mx-auto px-8 py-12">
+    <div className="container mx-auto px-8 py-12 ">
+      
       <div className="mac-window p-8 mx-auto max-w-4xl">
-        <div className="bg-apple-dark text-apple-cream px-4 py-2 -m-8 mb-8 flex justify-between items-center">
-          <div className="flex space-x-1">
-            <div className="w-4 h-4 bg-apple-cream border border-apple-dark"></div>
-          </div>
-        </div>
         
-        <div className="terminal p-4 mb-8 font-apple text-sm">
-        </div>
-        
-        <div className="text-center">
-          <h1 className="text-4xl md:text-6xl mb-6">
+        <Card round={!isMobile} className="text-center w-full aspect-square flex flex-col justify-center items-center border-0 bg-gradient-to-br from-white via-gray-100 to-gray-300">
+          <CardTitle className="text-4xl md:text-5xl">
             SUNGJOON PARK
-          </h1>
-          <div className="pixel-border bg-apple-cream p-6 mb-8">
+          </CardTitle>
+          <CardContent className="pixel-border bg-apple-cream p-6 ">
             <p className="text-lg font-mono">
-              SPECIALIZING IN: REACT, TYPESCRIPT, NEXT.JS<br/>
-              STATUS: BUILDING THE FUTURE, ONE PIXEL AT A TIME<br/>
-              LOCATION: WEST HARLEM, NYC
+              REACT, TYPESCRIPT, NEXT.JS DEV<br/>
+              4TH YEAR CS @ COLUMBIA UNIVERSITY<br/>
+              WEST HARLEM, NYC
             </p>
-          </div>
+          </CardContent>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button asChild variant="outline">
+          <div className="flex flex-row sm:flex-row gap-4 justify-center items-center">
+            <Button size='largeCircle'>
               <Link to="/about">ABOUT</Link>
             </Button>
-            <Button asChild variant="outline">
+            <Button size='largeCircle'>
               <Link to="/projects">PROJECTS</Link>
             </Button>
           </div>
-        </div>
+        </Card>
       </div>
     </div>
     
-          <div className="fixed bottom-0 left-0 right-0 bg-white text-black px-4 py-1 text-xs">
+    <div className="fixed bottom-0 left-0 right-0 bg-white text-black px-4 py-1 text-xs">
       <div className="flex justify-between flex-col">
         <span>{new Date().toLocaleTimeString()}</span>
         <span>{new Date().toLocaleDateString()}</span>

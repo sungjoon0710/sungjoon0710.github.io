@@ -40,7 +40,7 @@ export const TimeBar: React.FC<TimeBarProps> = ({ currentTime }) => {
             return (
                 <div
                     key={i}
-                    className="w-6 h-6 border border-gray-400 bg-[#000000] text-white text-xs text-center flex flex-col justify-center"
+                    className="w-6 h-6 border border-gray-400 bg-[#000000] text-white text-xs text-center flex flex-col justify-center rounded-full"
                 >
                     {yearStr.slice(2)}
                 </div>
@@ -52,7 +52,7 @@ export const TimeBar: React.FC<TimeBarProps> = ({ currentTime }) => {
             const currentYearStr = year.toString();
             return (
             <div
-                className="w-6 h-6 border border-[#FFFFFF] bg-[#000000] text-white text-xs text-center flex flex-col justify-center"
+                className="w-6 h-6 border border-[#FFFFFF] bg-[#000000] text-white text-xs text-center flex flex-col justify-center rounded-full"
                 style={{ backgroundColor: isBlinking ? '#FFFFFF' : '#000000' }}
             >
                 {currentYearStr.slice(2)}
