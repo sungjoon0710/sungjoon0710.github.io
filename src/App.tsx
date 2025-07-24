@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { isMobile } from "react-device-detect";
 import { Button } from "@/components/ui/button"
 import { HomeButton } from "@/components/ui/button"
-import { Card, CardTitle, CardContent } from './components/ui/card'
+import { Card, CardTitle, CardContent, CardHeader } from './components/ui/card'
 import { TimeBar } from './components/time/TimeBar'
 
 const version = "1.1"
@@ -14,7 +14,7 @@ const Home = () => (
       <span className="font-bold text-sm">Welcome - Sungjoon's Website</span>
     </div>
     
-    <div className="container mx-auto px-8 py-12 ">
+    <div className="container mx-auto px-8 py-8 ">
       
       <div className="mac-window p-8 mx-auto max-w-4xl">
         
@@ -24,9 +24,9 @@ const Home = () => (
           </CardTitle>
           <CardContent className="pixel-border bg-apple-cream p-6 ">
             <p className="text-lg font-mono">
-              REACT, TYPESCRIPT, NEXT.JS DEV<br/>
+              REACT, TYPESCRIPT, NEXT.JS, ML/AI<br/>
               4TH YEAR CS @ COLUMBIA UNIVERSITY<br/>
-              WEST HARLEM, NYC
+              SEOUL, S. KOREA / W. HARLEM, NYC
             </p>
           </CardContent>
           
@@ -54,55 +54,88 @@ const Home = () => (
 
 const About = () => (
   <div className="min-h-screen bg-apple-beige font-apple-system">
-    <div className="bg-apple-dark text-apple-cream px-4 py-1 text-sm font-bold">
+    <div className="bg-apple-dark text-apple-cream px-4 py-1 text-sm font-bold flex flex-col">
       <span className="mr-8">🍎 Version {version}</span>
+      <span className="font-bold text-sm">About.txt</span>
     </div>
     
-    <div className="container mx-auto px-8 py-12">
-      <div className="mac-window p-8 mx-auto max-w-4xl">
-        <div className="bg-apple-dark text-apple-cream px-4 py-2 -m-8 mb-8 flex justify-between items-center">
-          <span className="font-bold text-sm">About.txt</span>
-          <HomeButton />
-        </div>
+    <div className="container mx-auto px-8 py-8">
+      <div className="mac-window p-8 mx-auto">
+        <HomeButton />
         
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="pixel-border p-6">
-            <h2 className="retro-title text-2xl mb-4 text-apple-dark">ABOUT</h2>
-            <Card className="text-sm bg-[#f5f5f5]">
+        <div className="grid md:grid-cols-2 gap-8 mt-4">
+          <Card className="pixel-border">
+            <div className="flex flex-row justify-between">
+              <CardHeader className="retro-title text-2xl text-apple-dark">BIO</CardHeader>
+              <CardContent className="overflow-hidden w-50">
+                <img src="/sungjoonProfile.jpg" alt="Sungjoon Park" />
+              </CardContent>
+            </div>
+            <CardContent className="text-md flex flex-col gap-2">
               <div> NAME: SUNGJOON PARK</div>
-              <div> EDUCATION: COLUMBIA UNIVERSITY (B.A. COMPUTER SCIENCE)</div>
-              <div> LOCATION: NEW YORK, NY</div>
-              <div> FOCUS: FULL-STACK DEVELOPMENT & AI/ML</div>
-              <div> EXPERIENCE: SOFTWARE ENGINEERING</div>
-              <div> INTERESTS: HIKING, EARTH SCIENCE, MOTORCYCLES</div>
-            </Card>
-          </div>
+              <div> EDUCATION: 🦁 COLUMBIA UNIVERSITY (B.A. COMPUTER SCIENCE)</div>
+              <div> LOCATION: 🗽 NEW YORK, NY</div>
+              <div> FOCUS: 🌐 FULL-STACK DEVELOPMENT & 🤖 AI/ML</div>
+              <div> EXPERIENCE: 👨🏻‍💻 API DESIGN, 🛠️ DATA PIPELINES, 🔐 AUTH FLOW</div>
+              <div> INTERESTS: 🏕️ CAMPING/HIKING, 🌍 EARTH SCIENCE, 🚴‍♂️ BIKING, 🦒 ENVIRONMENTAL BIO </div>
+              <div> LANGUAGES: 🇰🇷 한국어, 🇺🇸 ENGLISH, 🇨🇳 中文</div>
+            </CardContent>
+          </Card>
           
-          <div className="terminal p-4 text-sm">
-            <div>
-              <div>RECENT_ROLES:</div>
-              <div>├── FOUNDING ENGINEER - NURY, INC (MAR 2024 - PRESENT)</div>
-              <div>├── Built Next.js committee management tool</div>
-              <div>├── DATA & COMPUTE INTERN - LEAP-STC (MAY 2024 - PRESENT)</div>
-              <div>└── BACKEND ENGINEER - MDSALESNAVI (JUL - AUG 2024)</div>
-              <div>KEY_HIGHLIGHTS:</div>
+          <Card className="pixel-border">
+            <CardHeader className="retro-title text-2xl text-apple-dark">EXPERIENCE</CardHeader>
+            <CardContent className="text-md flex flex-col">
+              <div className="flex flex-row justify-between">
+                <div className="font-bold text-md">FOUNDING ENGINEER - NURY</div>
+                <div className="text-right text-sm text-[#666]">MAR 25' - PRESENT</div>
+              </div>
               <div>├── Built Next.js committee management tool</div>
               <div>├── Engineered Firebase + JWT auth system</div>
-              <div>├── Developed real-time notifications (iOS/web)</div>
-              <div>├── Streamlined JupyterLab server for 120+ researchers</div>
+              <div>├── Developed real-time notifications (iOS/Android) </div>
+              <div>└── Bootstrapped Next.js from scratch </div>
+              
+              <div className="flex flex-row justify-between mt-2">
+                <div className="font-bold text-md">DATA & COMPUTE INTERN - LEAP-STC</div>
+                <div className="text-right text-sm text-[#666]">MAY 25' - PRESENT</div>
+              </div>
+              <div>├── Streamlined JupyterHub documentation for 120+ researchers</div>
+              <div>└── Documentation revisions for major categories</div>
+
+              <div className="flex flex-row justify-between mt-2">
+                <div className="font-bold text-md">TEACHING ASSISTANT - COLUMBIA CS DEPT.</div>
+                <div className="text-right text-sm text-[#666]">JAN - MAY 25'</div>
+              </div>
+              <div>├── CS 3203 Discrete Math with Prof. Tony Dear</div>
+              <div>└── Gave recitation sessions and hosted office hours</div>
+            
+              <div className="flex flex-row justify-between mt-2">
+                <div className="font-bold text-md">BACKEND ENGINEER - MDSalesNavi</div>
+                <div className="text-right text-sm text-[#666]">JUL - AUG 24'</div>
+              </div>
               <div>├── Built voice memo medical transcription system</div>
               <div>└── Fine-tuned BERT classifier for medical data</div>
-              <div>TECHNOLOGIES:</div>
-              <div>├── Next.js, React, Firebase, GraphQL, OpenAI</div>
-              <div>├── Python, PyTorch, BERT, JupyterLab</div>
-              <div>└── Docker, Capacitor, JWT, ChromaDB</div>
-            </div>
-          </div>
+
+              <div className="flex flex-row justify-between mt-2">
+                <div className="font-bold text-md">RESEARCH INTERN - LAMONT-DOHERTY EARTH OBSERVATORY</div>
+                <div className="text-right text-sm text-[#666]">MAR - DEC 24'</div>
+              </div>
+              <div>├── Analyzed seasonal bias trends in NMME hindcast Niño 3.4 SSTs</div>
+              <div>└── Poster Presentation at American Geophysical Union 2024</div>
+            </CardContent>
+          </Card>
         </div>
         
         <div className="mt-8 text-center">
-          <div className="pixel-border bg-apple-cream p-4 font-mono text-apple-dark">
-            "The best way to predict the future is to invent it." - Alan Kay, Apple Fellow
+          <div className="flex flex-row gap-2 justify-center">
+            <Button size='circle' className='text-sm'>
+              <Link to="https://www.github.com/sungjoon0710">GITHUB</Link>
+            </Button>
+            <Button size='circle' className='text-sm'>
+              <Link to="https://www.linkedin.com/in/the-sungjoon-park/">LINKEDIN</Link>
+            </Button>
+            <Button size='circle' className='text-sm'>
+              <Link to="https://www.instagram.com/spark_0710/">IG</Link>
+            </Button>
           </div>
         </div>
       </div>
@@ -128,12 +161,12 @@ const Projects = () => (
         <div className="grid md:grid-cols-2 gap-6">
           {/* Project 1 */}
           <h2 className="pixel-border bg-apple-cream p-6">
-            Project 1
+            Under Construction
           </h2>
           
           {/* Project 2 */}
           <h2 className="pixel-border bg-apple-cream p-6">
-            Project 2
+            Under Construction
           </h2>
 
         </div>
