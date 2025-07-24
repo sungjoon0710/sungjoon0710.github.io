@@ -26,7 +26,7 @@ export const TimeBar: React.FC<TimeBarProps> = ({ currentTime }) => {
 
     // Blink effect for the current year
     useEffect(() => {
-        const interval = setInterval(() => setIsBlinking((b) => !b), 1800);
+        const interval = setInterval(() => setIsBlinking((b) => !b), 1200);
         return () => clearInterval(interval);
     }, []);
 

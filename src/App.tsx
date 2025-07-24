@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { isMobile } from "react-device-detect";
 import { Button } from "@/components/ui/button"
 import { HomeButton } from "@/components/ui/button"
 import { Card } from './components/ui/card'
@@ -53,7 +54,7 @@ const Home = () => (
       <div className="flex justify-between flex-col">
         <span>{new Date().toLocaleTimeString()}</span>
         <span>{new Date().toLocaleDateString()}</span>
-        <TimeBar currentTime={new Date().toISOString()} />
+        {!isMobile && <TimeBar currentTime={new Date().toISOString()} />}
       </div>
     </div>
   </div>
