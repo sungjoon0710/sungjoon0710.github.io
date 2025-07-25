@@ -27,30 +27,34 @@ export default function PdfViewer({ fileName }: PdfViewerProps) {
     return (
         <>
             {isMobile ? (
-                <div className="w-full h-full overflow-hidden flex flex-col items-center">
+                <div className="w-full max-w-full h-auto overflow-x-hidden flex flex-col items-center">
                     <Document file={fileUrl} onLoadSuccess={onDocumentLoadSuccess}>
-                    <Page pageNumber={pageNumber} />
+                        <Page
+                            pageNumber={pageNumber}
+                            width={Math.min(window.innerWidth, 500) - 5} // 5px margin for safety
+                            className="mx-auto"
+                        />
                     </Document>
                     {numPages && (
-                    <div className="flex gap-4 mt-2 items-center">
-                        <Button
-                            onClick={() => setPageNumber((p) => Math.max(1, p - 1))}
-                            disabled={pageNumber <= 1}
-                            >
-                            Prev
-                        </Button>
+                        <div className="flex gap-4 mt-2 items-center">
+                            <Button
+                                onClick={() => setPageNumber((p) => Math.max(1, p - 1))}
+                                disabled={pageNumber <= 1}
+                                >
+                                Prev
+                            </Button>
 
-                        <span className="text-sm">
-                            {pageNumber} / {numPages}
-                        </span>
+                            <span className="text-sm">
+                                {pageNumber} / {numPages}
+                            </span>
 
-                        <Button
-                            onClick={() => setPageNumber((p) => Math.min(numPages, p + 1))}
-                            disabled={pageNumber >= numPages}
-                            >
-                            Next
-                        </Button>
-                    </div>
+                            <Button
+                                onClick={() => setPageNumber((p) => Math.min(numPages, p + 1))}
+                                disabled={pageNumber >= numPages}
+                                >
+                                Next
+                            </Button>
+                        </div>
                     )}
                 </div>
             ) : (
