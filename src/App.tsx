@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { HomeButton } from "@/components/ui/button"
 import { Card, CardTitle, CardContent, CardHeader } from './components/ui/card'
 import { TimeBar } from './components/time/TimeBar'
+import PdfViewer from './components/pdf/PdfViewer'
 
 const version = "1.1"
 
@@ -35,7 +36,7 @@ const Home = () => (
               <Link to="/about">ABOUT</Link>
             </Button>
             <Button size='largeCircle'>
-              <Link to="/projects">PROJECTS</Link>
+              <Link to="/research">RESEARCH</Link>
             </Button>
           </div>
         </Card>
@@ -143,32 +144,56 @@ const About = () => (
   </div>
 )
 
-const Projects = () => (
+const Research = () => (
   <div className="min-h-screen bg-apple-beige font-apple-system">
-    <div className="bg-apple-dark text-apple-cream px-4 py-1 text-sm font-bold">
+    <div className="bg-apple-dark text-apple-cream px-4 py-1 text-sm font-bold flex flex-col">
       <span className="mr-8">🍎 Version {version}</span>
+      <span className="font-bold text-sm">Research.txt</span>
     </div>
     
     <div className="container mx-auto px-8 py-12">
       <div className="mac-window p-8 mx-auto max-w-6xl">
-        <div className="bg-apple-dark text-apple-cream px-4 py-2 -m-8 mb-8 flex justify-between items-center">
-          <span className="font-bold text-sm">Projects Explorer</span>
-          <HomeButton />
-        </div>
+        <HomeButton />
         
-        <h1 className="retro-title text-3xl mb-8 text-apple-dark text-center">PROJECT_EXPLORER</h1>
-        
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Project 1 */}
-          <h2 className="pixel-border bg-apple-cream p-6">
-            Under Construction
-          </h2>
-          
-          {/* Project 2 */}
-          <h2 className="pixel-border bg-apple-cream p-6">
-            Under Construction
-          </h2>
+        <div className="grid md:grid-cols-2 gap-8 mt-4">
+          <Card className="pixel-border">
+            <div className="flex flex-row justify-between">
+              <CardHeader className="retro-title text-2xl text-apple-dark">
+                <Link to="/research/LDEO_PAPER.pdf">
+                  LDEO PAPER
+                </Link>
+              </CardHeader>
+              <CardContent className="overflow-hidden w-50">
+                
+              </CardContent>
+            </div>
+            <CardContent className="text-md flex flex-col gap-2">
+              <div> TITLE: Evaluating Three Decades of NMME Hindcasts to Assess Model Performance in Predicting ENSO Onset</div>
+              <div> STUDY PERIOD: April – May 2025</div>
+              <div> FOCUS AREA: Novel model architecture for speech signal disentanglement</div>
+              <div> TECHNOLOGIES: PyTorch, Python, Convolutional Neural Networks</div>
+              <div> ...</div>
+            </CardContent>
+          </Card>
 
+          <Card className="pixel-border">
+            <div className="flex flex-row justify-between">
+              <CardHeader className="retro-title text-2xl text-apple-dark">
+                <Link to="/research/KAN_PAPER.pdf">
+                  KAN PAPER
+                </Link>
+              </CardHeader>
+              <CardContent className="overflow-hidden w-50">
+              </CardContent>
+            </div>
+            <CardContent className="text-md flex flex-col gap-2">
+              <div> TITLE: Kolmogorov-Arnold Networks for Compact Speech Signal Disentanglement</div>
+              <div> STUDY PERIOD: April – May 2025</div>
+              <div> FOCUS AREA: Novel model architecture for speech signal disentanglement</div>
+              <div> TECHNOLOGIES: PyTorch, Python, Convolutional Neural Networks</div>
+              <div> ...</div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
@@ -208,7 +233,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/research" element={<Research />} />
+        <Route path="/research/KAN_PAPER.pdf" element={<PdfViewer fileName="KAN_PAPER.pdf" />} />
+        <Route path="/research/LDEO_PAPER.pdf" element={<PdfViewer fileName="LDEO_PAPER.pdf" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
