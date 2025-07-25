@@ -163,16 +163,25 @@ const Research = () => (
                   LDEO PAPER
                 </Link>
               </CardHeader>
-              <CardContent className="overflow-hidden w-50">
-                
-              </CardContent>
+              <div className="flex flex-row gap-2">
+                <Button size='smallCircle' className='text-sm text-[#fff]'>
+                  <Link to="/research/LDEO_PAPER.pdf">
+                    PAPER
+                  </Link>
+                </Button>
+                <Button size='smallCircle' className='text-sm text-[#fff] mr-6'>
+                  <Link to="/research/LDEO_POSTER.pdf">
+                    POSTER
+                  </Link>
+                </Button>
+              </div>
             </div>
             <CardContent className="text-md flex flex-col gap-2">
               <div> TITLE: Evaluating Three Decades of NMME Hindcasts to Assess Model Performance in Predicting ENSO Onset</div>
-              <div> STUDY PERIOD: April – May 2025</div>
-              <div> FOCUS AREA: Novel model architecture for speech signal disentanglement</div>
-              <div> TECHNOLOGIES: PyTorch, Python, Convolutional Neural Networks</div>
-              <div> ...</div>
+              <div> STUDY PERIOD: Apr – Dec 2024</div>
+              <div> FOCUS AREA: Climatology Analysis, El Niño/La Niña Onset</div>
+              <div> TECHNOLOGIES: Python, Matplotlib, NumPy, Pandas</div>
+              <div> AFFILIATION: Summer Research Internship at Lamont-Doherty Earth Observatory</div>
             </CardContent>
           </Card>
 
@@ -183,15 +192,18 @@ const Research = () => (
                   KAN PAPER
                 </Link>
               </CardHeader>
-              <CardContent className="overflow-hidden w-50">
-              </CardContent>
+              <Button size='smallCircle' className='text-sm text-[#fff] mr-6'>
+                <Link to="/research/KAN_PAPER.pdf">
+                  PAPER
+                </Link>
+              </Button>
             </div>
             <CardContent className="text-md flex flex-col gap-2">
               <div> TITLE: Kolmogorov-Arnold Networks for Compact Speech Signal Disentanglement</div>
-              <div> STUDY PERIOD: April – May 2025</div>
-              <div> FOCUS AREA: Novel model architecture for speech signal disentanglement</div>
+              <div> STUDY PERIOD: Apr – May 2025</div>
+              <div> FOCUS AREA: Novel model architectures, Speech-signal disentanglement</div>
               <div> TECHNOLOGIES: PyTorch, Python, Convolutional Neural Networks</div>
-              <div> ...</div>
+              <div> AFFILIATION: Final Project for COMS 4995 Neural Networks & Deep Learning, Columbia University</div>
             </CardContent>
           </Card>
         </div>
@@ -236,6 +248,7 @@ function App() {
         <Route path="/research" element={<Research />} />
         <Route path="/research/KAN_PAPER.pdf" element={<PdfViewer fileName="KAN_PAPER.pdf" />} />
         <Route path="/research/LDEO_PAPER.pdf" element={<PdfViewer fileName="LDEO_PAPER.pdf" />} />
+        <Route path="/research/LDEO_POSTER.pdf" element={<PdfViewer fileName="LDEO_POSTER.pdf" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

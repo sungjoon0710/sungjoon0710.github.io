@@ -24,6 +24,17 @@ export default function PdfViewer({ fileName }: PdfViewerProps) {
     // The file path should be relative to the public directory
     const fileUrl = `/${fileName}`;
 
+    // Early return for single page pdfs
+    if (numPages === 1) {
+        return (
+            <div className="w-full max-w-full h-auto overflow-x-hidden flex flex-col items-center">
+                <Document file={fileUrl} onLoadSuccess={onDocumentLoadSuccess}>
+                    <Page pageNumber={pageNumber} width={window.innerWidth-10} className="mx-auto" />
+                </Document>
+            </div>
+        );
+    }
+
     return (
         <>
             {isMobile ? (
@@ -60,7 +71,7 @@ export default function PdfViewer({ fileName }: PdfViewerProps) {
             ) : (
                 <div className="w-full h-full overflow-hidden flex flex-col items-center">
                     <Document file={fileUrl} onLoadSuccess={onDocumentLoadSuccess}>
-                    <div className="flex flex-row justify-center gap-4">
+                    <div className="flex flex-row justify-center">
                         <Page pageNumber={pageNumber} />
                         {pageNumber < (numPages ?? 0) && (
                         <Page pageNumber={pageNumber + 1} />
