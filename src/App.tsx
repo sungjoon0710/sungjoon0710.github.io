@@ -76,9 +76,29 @@ const Home = () => (
 
 const About = () => (
   <div className="min-h-screen bg-apple-beige font-apple-system">
-    <div className="bg-apple-dark text-apple-cream px-4 py-1 text-sm font-bold flex flex-col">
-      <span className="mr-8">🍎 Version {version}</span>
-      <span className="font-bold text-sm">About.txt</span>
+    <div className="flex flex-row justify-between px-2 py-2">
+      <div className="flex flex-col text-apple-cream text-sm font-bold">
+        <span className="mr-8">🍎 Version {version}</span>
+        <span className="font-bold text-sm">About.txt</span>
+      </div>
+
+      <div className="flex flex-row gap-2 justify-center">
+              <Button size='superSmallCircle' className='text-sm'>
+                <Link to="https://www.github.com/sungjoon0710">
+                  <img src="/gh_white.png" alt="Github" className='w-5 h-5' />
+                </Link>
+              </Button>
+              <Button size='superSmallCircle' className='text-sm'>
+                <Link to="https://www.linkedin.com/in/the-sungjoon-park/">
+                  <img src="/in_white.png" alt="LinkedIn" className='w-5 h-5' />
+                </Link>
+              </Button>
+              <Button size='superSmallCircle' className='text-sm'>
+                <Link to="https://www.instagram.com/spark_0710/">
+                  <img src="/ig_white.png" alt="IG" className='w-5 h-5' />
+                </Link>
+              </Button>
+      </div>
     </div>
     
     <div className="container mx-auto px-8 py-8">
@@ -146,26 +166,6 @@ const About = () => (
             </CardContent>
           </Card>
         </div>
-        
-        <div className="mt-8 text-center">
-          <div className="flex flex-row gap-2 justify-center">
-            <Button size='circle' className='text-sm'>
-              <Link to="https://www.github.com/sungjoon0710">
-                <img src="/gh_white.png" alt="Github" className='w-8 h-8' />
-              </Link>
-            </Button>
-            <Button size='circle' className='text-sm'>
-              <Link to="https://www.linkedin.com/in/the-sungjoon-park/">
-                <img src="/in_white.png" alt="LinkedIn" className='w-8 h-8' />
-              </Link>
-            </Button>
-            <Button size='circle' className='text-sm'>
-              <Link to="https://www.instagram.com/spark_0710/">
-                <img src="/ig_white.png" alt="IG" className='w-8 h-8' />
-              </Link>
-            </Button>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -173,9 +173,29 @@ const About = () => (
 
 const Research = () => (
   <div className="min-h-screen bg-apple-beige font-apple-system">
-    <div className="bg-apple-dark text-apple-cream px-4 py-1 text-sm font-bold flex flex-col">
-      <span className="mr-8">🍎 Version {version}</span>
-      <span className="font-bold text-sm">Research.txt</span>
+    <div className="flex flex-row justify-between px-2 py-2">
+      <div className="flex flex-col text-apple-cream text-sm font-bold">
+        <span className="mr-8">🍎 Version {version}</span>
+        <span className="font-bold text-sm">Research.txt</span>
+      </div>
+
+      <div className="flex flex-row gap-2 justify-center">
+              <Button size='superSmallCircle' className='text-sm'>
+                <Link to="https://www.github.com/sungjoon0710">
+                  <img src="/gh_white.png" alt="Github" className='w-5 h-5' />
+                </Link>
+              </Button>
+              <Button size='superSmallCircle' className='text-sm'>
+                <Link to="https://www.linkedin.com/in/the-sungjoon-park/">
+                  <img src="/in_white.png" alt="LinkedIn" className='w-5 h-5' />
+                </Link>
+              </Button>
+              <Button size='superSmallCircle' className='text-sm'>
+                <Link to="https://www.instagram.com/spark_0710/">
+                  <img src="/ig_white.png" alt="IG" className='w-5 h-5' />
+                </Link>
+              </Button>
+      </div>
     </div>
     
     <div className="container mx-auto px-8 py-12">
@@ -209,6 +229,8 @@ const Research = () => (
               <div> FOCUS AREA: Climatology Analysis, El Niño/La Niña Onset</div>
               <div> TECHNOLOGIES: Python, Matplotlib, NumPy, Pandas</div>
               <div> AFFILIATION: Summer Research Internship at Lamont-Doherty Earth Observatory</div>
+              <div> COLLABORATOR: Sheen Zutshi, Barnard College</div>
+              <div> ADVISOR: Dr. Muhammad Azhar Ehsan, Center for Climate Systems Research</div>
             </CardContent>
           </Card>
 
@@ -231,6 +253,8 @@ const Research = () => (
               <div> FOCUS AREA: Novel model architectures, Speech-signal disentanglement</div>
               <div> TECHNOLOGIES: PyTorch, Python, Convolutional Neural Networks</div>
               <div> AFFILIATION: Final Project for COMS 4995 Neural Networks & Deep Learning, Columbia University</div>
+              <div> COLLABORATOR: Abhishek Chaudhary, Columbia Engineering</div>
+              <div> ADVISOR: Arjun Mani, Columbia Engineering</div>
             </CardContent>
           </Card>
         </div>
