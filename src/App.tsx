@@ -87,7 +87,7 @@ const About = () => (
             <CardHeader className="retro-title text-2xl text-apple-dark">EXPERIENCE</CardHeader>
             <CardContent className="text-md flex flex-col">
               <div className="flex flex-row justify-between">
-                <div className="font-bold text-md">FOUNDING ENGINEER - NURY</div>
+                <div className="font-bold text-md">FOUNDING ENGINEER - Plii</div>
                 <div className="text-right text-sm text-[#666]">MAR 25' - PRESENT</div>
               </div>
               <div>├── Built Next.js committee management tool</div>
