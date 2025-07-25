@@ -10,12 +10,33 @@ const version = "1.1"
 
 const Home = () => (
   <div className="min-h-screen bg-apple-beige font-apple-system">
-    <div className="flex flex-col text-apple-cream px-4 py-1 text-sm font-bold">
-      <span className="mr-8">🍎 Version {version}</span>
-      <span className="font-bold text-sm">Welcome - Sungjoon's Website</span>
+    
+    <div className="flex flex-row justify-between px-2 py-2">
+      <div className="flex flex-col text-apple-cream text-sm font-bold">
+        <span className="mr-8">🍎 Version {version}</span>
+        <span className="font-bold text-sm">Welcome - Sungjoon's Website</span>
+      </div>
+
+      <div className="flex flex-row gap-2 justify-center">
+              <Button size='superSmallCircle' className='text-sm'>
+                <Link to="https://www.github.com/sungjoon0710">
+                  <img src="/gh_white.png" alt="Github" className='w-5 h-5' />
+                </Link>
+              </Button>
+              <Button size='superSmallCircle' className='text-sm'>
+                <Link to="https://www.linkedin.com/in/the-sungjoon-park/">
+                  <img src="/in_white.png" alt="LinkedIn" className='w-5 h-5' />
+                </Link>
+              </Button>
+              <Button size='superSmallCircle' className='text-sm'>
+                <Link to="https://www.instagram.com/spark_0710/">
+                  <img src="/ig_white.png" alt="IG" className='w-5 h-5' />
+                </Link>
+              </Button>
+      </div>
     </div>
     
-    <div className="container mx-auto px-8 py-8 ">
+    <div className="container mx-auto px-8 py-4">
       
       <div className="mac-window p-8 mx-auto max-w-4xl">
         
@@ -43,7 +64,7 @@ const Home = () => (
       </div>
     </div>
     
-    <div className="fixed bottom-0 left-0 right-0 bg-white text-black px-4 py-1 text-xs">
+    <div className="fixed bottom-0 left-0 right-0 bg-white text-black px-2 py-2 text-xs">
       <div className="flex justify-between flex-col">
         <span>{new Date().toLocaleTimeString()}</span>
         <span>{new Date().toLocaleDateString()}</span>
