@@ -129,13 +129,19 @@ const About = () => (
         <div className="mt-8 text-center">
           <div className="flex flex-row gap-2 justify-center">
             <Button size='circle' className='text-sm'>
-              <Link to="https://www.github.com/sungjoon0710">GITHUB</Link>
+              <Link to="https://www.github.com/sungjoon0710">
+                <img src="/gh_white.png" alt="Github" className='w-8 h-8' />
+              </Link>
             </Button>
             <Button size='circle' className='text-sm'>
-              <Link to="https://www.linkedin.com/in/the-sungjoon-park/">LINKEDIN</Link>
+              <Link to="https://www.linkedin.com/in/the-sungjoon-park/">
+                <img src="/in_white.png" alt="LinkedIn" className='w-8 h-8' />
+              </Link>
             </Button>
             <Button size='circle' className='text-sm'>
-              <Link to="https://www.instagram.com/spark_0710/">IG</Link>
+              <Link to="https://www.instagram.com/spark_0710/">
+                <img src="/ig_white.png" alt="IG" className='w-8 h-8' />
+              </Link>
             </Button>
           </div>
         </div>
