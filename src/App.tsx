@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { HomeButton } from "@/components/ui/button"
 import { Card, CardTitle, CardContent, CardHeader } from './components/ui/card'
 import { TimeBar } from './components/time/TimeBar'
+import PdfViewer from './components/pdf/PdfViewer'
 
 const version = "1.1"
 
@@ -159,7 +160,7 @@ const Research = () => (
             <div className="flex flex-row justify-between">
               <CardHeader className="retro-title text-2xl text-apple-dark">LDEO PAPER</CardHeader>
               <CardContent className="overflow-hidden w-50">
-                <img src="/sungjoonProfile.jpg" alt="Sungjoon Park" />
+                
               </CardContent>
             </div>
             <CardContent className="text-md flex flex-col gap-2">
@@ -173,9 +174,12 @@ const Research = () => (
 
           <Card className="pixel-border">
             <div className="flex flex-row justify-between">
-              <CardHeader className="retro-title text-2xl text-apple-dark">KAN PAPER</CardHeader>
+              <CardHeader className="retro-title text-2xl text-apple-dark">
+                <Link to="/research/KAN_PAPER.pdf">
+                  KAN PAPER
+                </Link>
+              </CardHeader>
               <CardContent className="overflow-hidden w-50">
-                <img src="/sungjoonProfile.jpg" alt="Sungjoon Park" />
               </CardContent>
             </div>
             <CardContent className="text-md flex flex-col gap-2">
@@ -226,6 +230,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/research" element={<Research />} />
+        <Route path="/research/KAN_PAPER.pdf" element={<PdfViewer fileName="KAN_PAPER.pdf" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
