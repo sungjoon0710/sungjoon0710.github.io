@@ -158,13 +158,17 @@ const Research = () => (
         <div className="grid md:grid-cols-2 gap-8 mt-4">
           <Card className="pixel-border">
             <div className="flex flex-row justify-between">
-              <CardHeader className="retro-title text-2xl text-apple-dark">LDEO PAPER</CardHeader>
+              <CardHeader className="retro-title text-2xl text-apple-dark">
+                <Link to="/research/LDEO_PAPER.pdf">
+                  LDEO PAPER
+                </Link>
+              </CardHeader>
               <CardContent className="overflow-hidden w-50">
                 
               </CardContent>
             </div>
             <CardContent className="text-md flex flex-col gap-2">
-              <div> TITLE: Kolmogorov-Arnold Networks for Compact Speech Signal Disentanglement</div>
+              <div> TITLE: Evaluating Three Decades of NMME Hindcasts to Assess Model Performance in Predicting ENSO Onset</div>
               <div> STUDY PERIOD: April – May 2025</div>
               <div> FOCUS AREA: Novel model architecture for speech signal disentanglement</div>
               <div> TECHNOLOGIES: PyTorch, Python, Convolutional Neural Networks</div>
@@ -231,6 +235,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/research" element={<Research />} />
         <Route path="/research/KAN_PAPER.pdf" element={<PdfViewer fileName="KAN_PAPER.pdf" />} />
+        <Route path="/research/LDEO_PAPER.pdf" element={<PdfViewer fileName="LDEO_PAPER.pdf" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
