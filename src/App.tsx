@@ -300,6 +300,7 @@ function App() {
         <Route path="/research/KAN_PAPER.pdf" element={<PdfViewer fileName="KAN_PAPER.pdf" />} />
         <Route path="/research/LDEO_PAPER.pdf" element={<PdfViewer fileName="LDEO_PAPER.pdf" />} />
         <Route path="/research/LDEO_POSTER.pdf" element={<PdfViewer fileName="LDEO_POSTER.pdf" />} />
+        <Route path="/resume" element={<PdfViewer fileName="Sungjoon_Park_Research_Resume.pdf" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
